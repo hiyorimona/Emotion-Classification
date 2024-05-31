@@ -1,0 +1,6 @@
+# models trained with BERT and RoBERTa are too large to be pushed to GitHub
+*.bin
+*.pth
+RoBERTa_classification/data
+transcript_extraction/Data/*/*.mov
+LLama2 Classification/data

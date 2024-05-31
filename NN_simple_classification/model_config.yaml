@@ -1,0 +1,2773 @@
+Bidirectional_Word2Vec_LSTM:
+  compile_params:
+    loss: categorical_crossentropy
+    metrics:
+    - accuracy
+    - &id047 !!python/name:scripts.params.f1 ''
+    optimizer: adam
+  embedding_dim: 100
+  model_layers:
+  - !!python/object:keras.src.layers.core.embedding.Embedding
+    _activity_regularizer: null
+    _auto_config: &id001 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        input_dim: 10000
+        output_dim: 100
+        trainable: false
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: false
+    _batch_input_shape: !!python/tuple
+    - null
+    - null
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: &id003 !!python/object/apply:tensorflow.python.framework.dtypes.as_dtype
+    - float32
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: embedding_5
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: false
+          : 4
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 100
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 10000
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id001
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id002 !!python/object:keras.src.initializers.initializers.RandomUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                maxval: 0.05
+                minval: -0.05
+                seed: null
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: false
+    _trainable: false
+    _trainable_weights: []
+    _updates: []
+    _use_one_hot_matmul: false
+    built: false
+    embeddings_constraint: null
+    embeddings_initializer: *id002
+    embeddings_regularizer: null
+    input_dim: 10000
+    input_length: null
+    mask_zero: false
+    output_dim: 100
+    sparse: false
+  - !!python/object:keras.src.layers.rnn.bidirectional.Bidirectional
+    _activity_regularizer: null
+    _auto_get_config: false
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      - training
+      - mask
+      - initial_state
+      - constants
+      _default_training_arg: null
+      _expects_mask_arg: true
+      _expects_training_arg: true
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+        - training
+        - mask
+        - initial_state
+        - constants
+      - null
+      - null
+      - !!python/tuple
+        - null
+        - null
+        - null
+        - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: &id030
+    - !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: null
+      name: null
+      ndim: 3
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: bidirectional_1
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _num_constants: 0
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: false
+          : 3
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 0
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id028 !!python/object:keras.src.layers.rnn.lstm.LSTM
+                _activity_regularizer: null
+                _auto_config: &id014 !!python/object:keras.src.saving.serialization_lib.Config
+                  config:
+                    activation: tanh
+                    activity_regularizer: null
+                    bias_constraint: null
+                    bias_initializer: &id004
+                      class_name: Zeros
+                      config: {}
+                      module: keras.initializers
+                      registered_name: null
+                    bias_regularizer: null
+                    dropout: 0.2
+                    dtype: float32
+                    go_backwards: false
+                    implementation: 1
+                    kernel_constraint: null
+                    kernel_initializer: &id005
+                      class_name: GlorotUniform
+                      config:
+                        seed: null
+                      module: keras.initializers
+                      registered_name: null
+                    kernel_regularizer: null
+                    name: lstm_3
+                    recurrent_activation: sigmoid
+                    recurrent_constraint: null
+                    recurrent_dropout: 0.2
+                    recurrent_initializer: &id006
+                      class_name: Orthogonal
+                      config:
+                        gain: 1.0
+                        seed: null
+                      module: keras.initializers
+                      registered_name: null
+                    recurrent_regularizer: null
+                    return_sequences: false
+                    return_state: false
+                    stateful: false
+                    time_major: false
+                    trainable: true
+                    unit_forget_bias: true
+                    units: 128
+                    unroll: false
+                    use_bias: true
+                _auto_get_config: true
+                _auto_track_sub_layers: true
+                _autocast: true
+                _build_input_shape: null
+                _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+                  _arg_names:
+                  - inputs
+                  - mask
+                  - training
+                  - initial_state
+                  _default_training_arg: null
+                  _expects_mask_arg: true
+                  _expects_training_arg: true
+                  _full_argspec: !!python/object/new:inspect.FullArgSpec
+                  - - self
+                    - inputs
+                    - mask
+                    - training
+                    - initial_state
+                  - null
+                  - null
+                  - !!python/tuple
+                    - null
+                    - null
+                    - null
+                  - []
+                  - null
+                  - {}
+                _callable_losses: []
+                _captured_weight_regularizer: []
+                _compute_dtype_object: *id003
+                _could_use_gpu_kernel: false
+                _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+                  _compute_dtype: float32
+                  _name: float32
+                  _variable_dtype: float32
+                _dynamic: false
+                _inbound_nodes_value: []
+                _initial_weights: null
+                _input_spec:
+                - !!python/object:keras.src.engine.input_spec.InputSpec
+                  allow_last_axis_squeeze: false
+                  axes: {}
+                  dtype: null
+                  max_ndim: null
+                  min_ndim: null
+                  name: null
+                  ndim: 3
+                  shape: null
+                _instrumented_keras_api: true
+                _instrumented_keras_layer_class: true
+                _instrumented_keras_model_class: false
+                _losses: []
+                _metrics: []
+                _name: forward_lstm_3
+                _name_scope_on_declaration: ''
+                _non_trainable_weights: []
+                _num_constants: 0
+                _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+                  state: !!python/tuple
+                  - null
+                  - _storage:
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: false
+                      : 8
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: true
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: 0
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: forward_lstm_3
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id015 !!python/object:keras.src.layers.rnn.lstm.LSTMCell
+                            _activity_regularizer: null
+                            _auto_config: &id007 !!python/object:keras.src.saving.serialization_lib.Config
+                              config:
+                                activation: tanh
+                                bias_constraint: null
+                                bias_initializer: *id004
+                                bias_regularizer: null
+                                dropout: 0.2
+                                dtype: float32
+                                implementation: 1
+                                kernel_constraint: null
+                                kernel_initializer: *id005
+                                kernel_regularizer: null
+                                name: lstm_cell
+                                recurrent_activation: sigmoid
+                                recurrent_constraint: null
+                                recurrent_dropout: 0.2
+                                recurrent_initializer: *id006
+                                recurrent_regularizer: null
+                                trainable: true
+                                unit_forget_bias: true
+                                units: 128
+                                use_bias: true
+                            _auto_get_config: true
+                            _auto_track_sub_layers: true
+                            _autocast: true
+                            _build_input_shape: null
+                            _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+                              _arg_names:
+                              - inputs
+                              - states
+                              - training
+                              _default_training_arg: null
+                              _expects_mask_arg: false
+                              _expects_training_arg: true
+                              _full_argspec: !!python/object/new:inspect.FullArgSpec
+                              - - self
+                                - inputs
+                                - states
+                                - training
+                              - null
+                              - null
+                              - !!python/tuple
+                                - null
+                              - []
+                              - null
+                              - {}
+                            _callable_losses: []
+                            _captured_weight_regularizer: []
+                            _compute_dtype_object: *id003
+                            _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+                              _compute_dtype: float32
+                              _name: float32
+                              _variable_dtype: float32
+                            _dynamic: false
+                            _enable_caching_device: true
+                            _inbound_nodes_value: []
+                            _initial_weights: null
+                            _input_spec: null
+                            _instrumented_keras_api: true
+                            _instrumented_keras_layer_class: true
+                            _instrumented_keras_model_class: false
+                            _losses: []
+                            _metrics: []
+                            _name: lstm_cell
+                            _name_scope_on_declaration: ''
+                            _non_trainable_weights: []
+                            _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+                              state: !!python/tuple
+                              - null
+                              - _storage:
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: true
+                                  : 4
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: 1
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: 128
+                                  : 2
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id010 !!python/object:keras.src.initializers.initializers.Zeros {}
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: 0.2
+                                  : 2
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id008 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+                                      - - 128
+                                        - 128
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id013 !!python/object:keras.src.initializers.initializers.Orthogonal
+                                        _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                                          _built: false
+                                          _rng_type: stateless
+                                          _seed: null
+                                        gain: 1.0
+                                        seed: null
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id011 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                                        _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                                          _built: false
+                                          _rng_type: stateless
+                                          _seed: null
+                                        distribution: uniform
+                                        mode: fan_avg
+                                        scale: 1.0
+                                        seed: null
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: *id007
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id009 !!python/name:keras.src.activations.tanh ''
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id012 !!python/name:keras.src.activations.sigmoid ''
+                                  : 1
+                            _outbound_nodes_value: []
+                            _preserve_input_structure_in_config: false
+                            _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                              _built: false
+                              _rng_type: legacy_stateful
+                              _seed: null
+                            _saved_model_arg_spec: null
+                            _saved_model_inputs_spec: null
+                            _self_name_based_restores: !!set {}
+                            _self_saveable_object_factories: {}
+                            _self_setattr_tracking: true
+                            _self_tracked_trackables:
+                            - *id008
+                            _self_unconditional_checkpoint_dependencies:
+                            - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                              state: !!python/tuple
+                              - null
+                              - _name: state_size
+                                _ref: *id008
+                            _self_unconditional_deferred_dependencies: {}
+                            _self_unconditional_dependency_names:
+                              state_size: *id008
+                            _self_update_uid: -1
+                            _stateful: false
+                            _supports_masking: false
+                            _trainable: true
+                            _trainable_weights: []
+                            _updates: []
+                            activation: *id009
+                            bias_constraint: null
+                            bias_initializer: *id010
+                            bias_regularizer: null
+                            built: false
+                            dropout: 0.2
+                            implementation: 1
+                            kernel_constraint: null
+                            kernel_initializer: *id011
+                            kernel_regularizer: null
+                            output_size: 128
+                            recurrent_activation: *id012
+                            recurrent_constraint: null
+                            recurrent_dropout: 0.2
+                            recurrent_initializer: *id013
+                            recurrent_regularizer: null
+                            state_size: *id008
+                            unit_forget_bias: true
+                            units: 128
+                            use_bias: true
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: *id014
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id016 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+                          - - !!python/object:keras.src.engine.input_spec.InputSpec
+                              allow_last_axis_squeeze: false
+                              axes: {}
+                              dtype: null
+                              max_ndim: null
+                              min_ndim: null
+                              name: null
+                              ndim: 2
+                              shape: !!python/tuple
+                              - null
+                              - 128
+                            - !!python/object:keras.src.engine.input_spec.InputSpec
+                              allow_last_axis_squeeze: false
+                              axes: {}
+                              dtype: null
+                              max_ndim: null
+                              min_ndim: null
+                              name: null
+                              ndim: 2
+                              shape: !!python/tuple
+                              - null
+                              - 128
+                      : 1
+                _outbound_nodes_value: []
+                _preserve_input_structure_in_config: false
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: legacy_stateful
+                  _seed: null
+                _saved_model_arg_spec: null
+                _saved_model_inputs_spec: null
+                _self_name_based_restores: !!set {}
+                _self_saveable_object_factories: {}
+                _self_setattr_tracking: true
+                _self_tracked_trackables:
+                - *id015
+                - *id016
+                _self_unconditional_checkpoint_dependencies:
+                - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                  state: !!python/tuple
+                  - null
+                  - _name: cell
+                    _ref: *id015
+                - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                  state: !!python/tuple
+                  - null
+                  - _name: state_spec
+                    _ref: *id016
+                _self_unconditional_deferred_dependencies: {}
+                _self_unconditional_dependency_names:
+                  cell: *id015
+                  state_spec: *id016
+                _self_update_uid: -1
+                _stateful: false
+                _states: null
+                _supports_masking: true
+                _trainable: true
+                _trainable_weights: []
+                _updates: []
+                built: false
+                cell: *id015
+                constants_spec: null
+                go_backwards: false
+                return_runtime: false
+                return_sequences: false
+                return_state: false
+                state_spec: *id016
+                time_major: false
+                unroll: false
+                zero_output_for_mask: false
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id029 !!python/object:keras.src.layers.rnn.lstm.LSTM
+                _activity_regularizer: null
+                _auto_config: &id025 !!python/object:keras.src.saving.serialization_lib.Config
+                  config:
+                    activation: tanh
+                    activity_regularizer: null
+                    bias_constraint: null
+                    bias_initializer: &id017
+                      class_name: Zeros
+                      config: {}
+                      module: keras.initializers
+                      registered_name: null
+                    bias_regularizer: null
+                    dropout: 0.2
+                    dtype: float32
+                    go_backwards: true
+                    implementation: 1
+                    kernel_constraint: null
+                    kernel_initializer: &id018
+                      class_name: GlorotUniform
+                      config:
+                        seed: null
+                      module: keras.initializers
+                      registered_name: null
+                    kernel_regularizer: null
+                    name: lstm_3
+                    recurrent_activation: sigmoid
+                    recurrent_constraint: null
+                    recurrent_dropout: 0.2
+                    recurrent_initializer: &id019
+                      class_name: Orthogonal
+                      config:
+                        gain: 1.0
+                        seed: null
+                      module: keras.initializers
+                      registered_name: null
+                    recurrent_regularizer: null
+                    return_sequences: false
+                    return_state: false
+                    stateful: false
+                    time_major: false
+                    trainable: true
+                    unit_forget_bias: true
+                    units: 128
+                    unroll: false
+                    use_bias: true
+                _auto_get_config: true
+                _auto_track_sub_layers: true
+                _autocast: true
+                _build_input_shape: null
+                _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+                  _arg_names:
+                  - inputs
+                  - mask
+                  - training
+                  - initial_state
+                  _default_training_arg: null
+                  _expects_mask_arg: true
+                  _expects_training_arg: true
+                  _full_argspec: !!python/object/new:inspect.FullArgSpec
+                  - - self
+                    - inputs
+                    - mask
+                    - training
+                    - initial_state
+                  - null
+                  - null
+                  - !!python/tuple
+                    - null
+                    - null
+                    - null
+                  - []
+                  - null
+                  - {}
+                _callable_losses: []
+                _captured_weight_regularizer: []
+                _compute_dtype_object: *id003
+                _could_use_gpu_kernel: false
+                _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+                  _compute_dtype: float32
+                  _name: float32
+                  _variable_dtype: float32
+                _dynamic: false
+                _inbound_nodes_value: []
+                _initial_weights: null
+                _input_spec:
+                - !!python/object:keras.src.engine.input_spec.InputSpec
+                  allow_last_axis_squeeze: false
+                  axes: {}
+                  dtype: null
+                  max_ndim: null
+                  min_ndim: null
+                  name: null
+                  ndim: 3
+                  shape: null
+                _instrumented_keras_api: true
+                _instrumented_keras_layer_class: true
+                _instrumented_keras_model_class: false
+                _losses: []
+                _metrics: []
+                _name: backward_lstm_3
+                _name_scope_on_declaration: ''
+                _non_trainable_weights: []
+                _num_constants: 0
+                _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+                  state: !!python/tuple
+                  - null
+                  - _storage:
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: false
+                      : 7
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: true
+                      : 2
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: 0
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id026 !!python/object:keras.src.layers.rnn.lstm.LSTMCell
+                            _activity_regularizer: null
+                            _auto_config: &id020 !!python/object:keras.src.saving.serialization_lib.Config
+                              config:
+                                activation: tanh
+                                bias_constraint: null
+                                bias_initializer: *id017
+                                bias_regularizer: null
+                                dropout: 0.2
+                                dtype: float32
+                                implementation: 1
+                                kernel_constraint: null
+                                kernel_initializer: *id018
+                                kernel_regularizer: null
+                                name: lstm_cell
+                                recurrent_activation: sigmoid
+                                recurrent_constraint: null
+                                recurrent_dropout: 0.2
+                                recurrent_initializer: *id019
+                                recurrent_regularizer: null
+                                trainable: true
+                                unit_forget_bias: true
+                                units: 128
+                                use_bias: true
+                            _auto_get_config: true
+                            _auto_track_sub_layers: true
+                            _autocast: true
+                            _build_input_shape: null
+                            _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+                              _arg_names:
+                              - inputs
+                              - states
+                              - training
+                              _default_training_arg: null
+                              _expects_mask_arg: false
+                              _expects_training_arg: true
+                              _full_argspec: !!python/object/new:inspect.FullArgSpec
+                              - - self
+                                - inputs
+                                - states
+                                - training
+                              - null
+                              - null
+                              - !!python/tuple
+                                - null
+                              - []
+                              - null
+                              - {}
+                            _callable_losses: []
+                            _captured_weight_regularizer: []
+                            _compute_dtype_object: *id003
+                            _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+                              _compute_dtype: float32
+                              _name: float32
+                              _variable_dtype: float32
+                            _dynamic: false
+                            _enable_caching_device: true
+                            _inbound_nodes_value: []
+                            _initial_weights: null
+                            _input_spec: null
+                            _instrumented_keras_api: true
+                            _instrumented_keras_layer_class: true
+                            _instrumented_keras_model_class: false
+                            _losses: []
+                            _metrics: []
+                            _name: lstm_cell
+                            _name_scope_on_declaration: ''
+                            _non_trainable_weights: []
+                            _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+                              state: !!python/tuple
+                              - null
+                              - _storage:
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: true
+                                  : 4
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: 1
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: 128
+                                  : 2
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id024 !!python/object:keras.src.initializers.initializers.Orthogonal
+                                        _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                                          _built: false
+                                          _rng_type: stateless
+                                          _seed: null
+                                        gain: 1.0
+                                        seed: null
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id021 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+                                      - - 128
+                                        - 128
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: 0.2
+                                  : 2
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id022 !!python/object:keras.src.initializers.initializers.Zeros {}
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: *id020
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: &id023 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                                        _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                                          _built: false
+                                          _rng_type: stateless
+                                          _seed: null
+                                        distribution: uniform
+                                        mode: fan_avg
+                                        scale: 1.0
+                                        seed: null
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: *id009
+                                  : 1
+                                  ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                                    state: !!python/tuple
+                                    - null
+                                    - _wrapped: *id012
+                                  : 1
+                            _outbound_nodes_value: []
+                            _preserve_input_structure_in_config: false
+                            _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                              _built: false
+                              _rng_type: legacy_stateful
+                              _seed: null
+                            _saved_model_arg_spec: null
+                            _saved_model_inputs_spec: null
+                            _self_name_based_restores: !!set {}
+                            _self_saveable_object_factories: {}
+                            _self_setattr_tracking: true
+                            _self_tracked_trackables:
+                            - *id021
+                            _self_unconditional_checkpoint_dependencies:
+                            - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                              state: !!python/tuple
+                              - null
+                              - _name: state_size
+                                _ref: *id021
+                            _self_unconditional_deferred_dependencies: {}
+                            _self_unconditional_dependency_names:
+                              state_size: *id021
+                            _self_update_uid: -1
+                            _stateful: false
+                            _supports_masking: false
+                            _trainable: true
+                            _trainable_weights: []
+                            _updates: []
+                            activation: *id009
+                            bias_constraint: null
+                            bias_initializer: *id022
+                            bias_regularizer: null
+                            built: false
+                            dropout: 0.2
+                            implementation: 1
+                            kernel_constraint: null
+                            kernel_initializer: *id023
+                            kernel_regularizer: null
+                            output_size: 128
+                            recurrent_activation: *id012
+                            recurrent_constraint: null
+                            recurrent_dropout: 0.2
+                            recurrent_initializer: *id024
+                            recurrent_regularizer: null
+                            state_size: *id021
+                            unit_forget_bias: true
+                            units: 128
+                            use_bias: true
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: *id025
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: backward_lstm_3
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id027 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+                          - - !!python/object:keras.src.engine.input_spec.InputSpec
+                              allow_last_axis_squeeze: false
+                              axes: {}
+                              dtype: null
+                              max_ndim: null
+                              min_ndim: null
+                              name: null
+                              ndim: 2
+                              shape: !!python/tuple
+                              - null
+                              - 128
+                            - !!python/object:keras.src.engine.input_spec.InputSpec
+                              allow_last_axis_squeeze: false
+                              axes: {}
+                              dtype: null
+                              max_ndim: null
+                              min_ndim: null
+                              name: null
+                              ndim: 2
+                              shape: !!python/tuple
+                              - null
+                              - 128
+                      : 1
+                _outbound_nodes_value: []
+                _preserve_input_structure_in_config: false
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: legacy_stateful
+                  _seed: null
+                _saved_model_arg_spec: null
+                _saved_model_inputs_spec: null
+                _self_name_based_restores: !!set {}
+                _self_saveable_object_factories: {}
+                _self_setattr_tracking: true
+                _self_tracked_trackables:
+                - *id026
+                - *id027
+                _self_unconditional_checkpoint_dependencies:
+                - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                  state: !!python/tuple
+                  - null
+                  - _name: cell
+                    _ref: *id026
+                - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                  state: !!python/tuple
+                  - null
+                  - _name: state_spec
+                    _ref: *id027
+                _self_unconditional_deferred_dependencies: {}
+                _self_unconditional_dependency_names:
+                  cell: *id026
+                  state_spec: *id027
+                _self_update_uid: -1
+                _stateful: false
+                _states: null
+                _supports_masking: true
+                _trainable: true
+                _trainable_weights: []
+                _updates: []
+                built: false
+                cell: *id026
+                constants_spec: null
+                go_backwards: true
+                return_runtime: false
+                return_sequences: false
+                return_state: false
+                state_spec: *id027
+                time_major: false
+                unroll: false
+                zero_output_for_mask: false
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: concat
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_name_based_restores: !!set {}
+    _self_saveable_object_factories: {}
+    _self_setattr_tracking: true
+    _self_tracked_trackables:
+    - *id028
+    - *id029
+    _self_unconditional_checkpoint_dependencies:
+    - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+      state: !!python/tuple
+      - null
+      - _name: forward_layer
+        _ref: *id028
+    - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+      state: !!python/tuple
+      - null
+      - _name: backward_layer
+        _ref: *id029
+    _self_unconditional_deferred_dependencies: {}
+    _self_unconditional_dependency_names:
+      backward_layer: *id029
+      forward_layer: *id028
+    _self_update_uid: -1
+    _stateful: false
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    backward_layer: *id029
+    built: false
+    forward_layer: *id028
+    layer: !!python/object:keras.src.layers.rnn.lstm.LSTM
+      _activity_regularizer: null
+      _auto_config: &id031 !!python/object:keras.src.saving.serialization_lib.Config
+        config:
+          dropout: 0.2
+          recurrent_dropout: 0.2
+          units: 128
+      _auto_get_config: true
+      _auto_track_sub_layers: true
+      _autocast: true
+      _build_input_shape: null
+      _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+        _arg_names:
+        - inputs
+        - mask
+        - training
+        - initial_state
+        _default_training_arg: null
+        _expects_mask_arg: true
+        _expects_training_arg: true
+        _full_argspec: !!python/object/new:inspect.FullArgSpec
+        - - self
+          - inputs
+          - mask
+          - training
+          - initial_state
+        - null
+        - null
+        - !!python/tuple
+          - null
+          - null
+          - null
+        - []
+        - null
+        - {}
+      _callable_losses: []
+      _captured_weight_regularizer: []
+      _compute_dtype_object: *id003
+      _could_use_gpu_kernel: false
+      _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+        _compute_dtype: float32
+        _name: float32
+        _variable_dtype: float32
+      _dynamic: false
+      _inbound_nodes_value: []
+      _initial_weights: null
+      _input_spec: *id030
+      _instrumented_keras_api: true
+      _instrumented_keras_layer_class: true
+      _instrumented_keras_model_class: false
+      _losses: []
+      _metrics: []
+      _name: lstm_3
+      _name_scope_on_declaration: ''
+      _non_trainable_weights: []
+      _num_constants: 0
+      _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+        state: !!python/tuple
+        - null
+        - _storage:
+            ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+              state: !!python/tuple
+              - null
+              - _wrapped: false
+            : 8
+            ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+              state: !!python/tuple
+              - null
+              - _wrapped: true
+            : 1
+            ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+              state: !!python/tuple
+              - null
+              - _wrapped: 0
+            : 1
+            ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+              state: !!python/tuple
+              - null
+              - _wrapped: *id031
+            : 1
+            ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+              state: !!python/tuple
+              - null
+              - _wrapped: &id037 !!python/object:keras.src.layers.rnn.lstm.LSTMCell
+                  _activity_regularizer: null
+                  _auto_config: &id032 !!python/object:keras.src.saving.serialization_lib.Config
+                    config:
+                      activation: tanh
+                      bias_constraint: null
+                      bias_initializer: zeros
+                      bias_regularizer: null
+                      dropout: 0.2
+                      dtype: null
+                      implementation: 2
+                      kernel_constraint: null
+                      kernel_initializer: glorot_uniform
+                      kernel_regularizer: null
+                      name: lstm_cell
+                      recurrent_activation: sigmoid
+                      recurrent_constraint: null
+                      recurrent_dropout: 0.2
+                      recurrent_initializer: orthogonal
+                      recurrent_regularizer: null
+                      trainable: true
+                      unit_forget_bias: true
+                      units: 128
+                      use_bias: true
+                  _auto_get_config: true
+                  _auto_track_sub_layers: true
+                  _autocast: true
+                  _build_input_shape: null
+                  _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+                    _arg_names:
+                    - inputs
+                    - states
+                    - training
+                    _default_training_arg: null
+                    _expects_mask_arg: false
+                    _expects_training_arg: true
+                    _full_argspec: !!python/object/new:inspect.FullArgSpec
+                    - - self
+                      - inputs
+                      - states
+                      - training
+                    - null
+                    - null
+                    - !!python/tuple
+                      - null
+                    - []
+                    - null
+                    - {}
+                  _callable_losses: []
+                  _captured_weight_regularizer: []
+                  _compute_dtype_object: *id003
+                  _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+                    _compute_dtype: float32
+                    _name: float32
+                    _variable_dtype: float32
+                  _dynamic: false
+                  _enable_caching_device: true
+                  _inbound_nodes_value: []
+                  _initial_weights: null
+                  _input_spec: null
+                  _instrumented_keras_api: true
+                  _instrumented_keras_layer_class: true
+                  _instrumented_keras_model_class: false
+                  _losses: []
+                  _metrics: []
+                  _name: lstm_cell
+                  _name_scope_on_declaration: ''
+                  _non_trainable_weights: []
+                  _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+                    state: !!python/tuple
+                    - null
+                    - _storage:
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: true
+                        : 4
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: 1
+                        : 1
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: 128
+                        : 2
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: &id035 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                              _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                                _built: false
+                                _rng_type: stateless
+                                _seed: null
+                              distribution: uniform
+                              mode: fan_avg
+                              scale: 1.0
+                              seed: null
+                        : 1
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: *id032
+                        : 1
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: 0.2
+                        : 2
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: &id036 !!python/object:keras.src.initializers.initializers.Orthogonal
+                              _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                                _built: false
+                                _rng_type: stateless
+                                _seed: null
+                              gain: 1.0
+                              seed: null
+                        : 1
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: &id034 !!python/object:keras.src.initializers.initializers.Zeros {}
+                        : 1
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: &id033 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+                            - - 128
+                              - 128
+                        : 1
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: *id009
+                        : 1
+                        ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                          state: !!python/tuple
+                          - null
+                          - _wrapped: *id012
+                        : 1
+                  _outbound_nodes_value: []
+                  _preserve_input_structure_in_config: false
+                  _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                    _built: false
+                    _rng_type: legacy_stateful
+                    _seed: null
+                  _saved_model_arg_spec: null
+                  _saved_model_inputs_spec: null
+                  _self_name_based_restores: !!set {}
+                  _self_saveable_object_factories: {}
+                  _self_setattr_tracking: true
+                  _self_tracked_trackables:
+                  - *id033
+                  _self_unconditional_checkpoint_dependencies:
+                  - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                    state: !!python/tuple
+                    - null
+                    - _name: state_size
+                      _ref: *id033
+                  _self_unconditional_deferred_dependencies: {}
+                  _self_unconditional_dependency_names:
+                    state_size: *id033
+                  _self_update_uid: -1
+                  _stateful: false
+                  _supports_masking: false
+                  _trainable: true
+                  _trainable_weights: []
+                  _updates: []
+                  activation: *id009
+                  bias_constraint: null
+                  bias_initializer: *id034
+                  bias_regularizer: null
+                  built: false
+                  dropout: 0.2
+                  implementation: 1
+                  kernel_constraint: null
+                  kernel_initializer: *id035
+                  kernel_regularizer: null
+                  output_size: 128
+                  recurrent_activation: *id012
+                  recurrent_constraint: null
+                  recurrent_dropout: 0.2
+                  recurrent_initializer: *id036
+                  recurrent_regularizer: null
+                  state_size: *id033
+                  unit_forget_bias: true
+                  units: 128
+                  use_bias: true
+            : 1
+            ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+              state: !!python/tuple
+              - null
+              - _wrapped: &id038 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+                - - !!python/object:keras.src.engine.input_spec.InputSpec
+                    allow_last_axis_squeeze: false
+                    axes: {}
+                    dtype: null
+                    max_ndim: null
+                    min_ndim: null
+                    name: null
+                    ndim: 2
+                    shape: !!python/tuple
+                    - null
+                    - 128
+                  - !!python/object:keras.src.engine.input_spec.InputSpec
+                    allow_last_axis_squeeze: false
+                    axes: {}
+                    dtype: null
+                    max_ndim: null
+                    min_ndim: null
+                    name: null
+                    ndim: 2
+                    shape: !!python/tuple
+                    - null
+                    - 128
+            : 1
+      _outbound_nodes_value: []
+      _preserve_input_structure_in_config: false
+      _random_generator: !!python/object:keras.src.backend.RandomGenerator
+        _built: false
+        _rng_type: legacy_stateful
+        _seed: null
+      _saved_model_arg_spec: null
+      _saved_model_inputs_spec: null
+      _self_name_based_restores: !!set {}
+      _self_saveable_object_factories: {}
+      _self_setattr_tracking: true
+      _self_tracked_trackables:
+      - *id037
+      - *id038
+      _self_unconditional_checkpoint_dependencies:
+      - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+        state: !!python/tuple
+        - null
+        - _name: cell
+          _ref: *id037
+      - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+        state: !!python/tuple
+        - null
+        - _name: state_spec
+          _ref: *id038
+      _self_unconditional_deferred_dependencies: {}
+      _self_unconditional_dependency_names:
+        cell: *id037
+        state_spec: *id038
+      _self_update_uid: -1
+      _stateful: false
+      _states: null
+      _supports_masking: true
+      _trainable: true
+      _trainable_weights: []
+      _updates: []
+      built: false
+      cell: *id037
+      constants_spec: null
+      go_backwards: false
+      return_runtime: false
+      return_sequences: false
+      return_state: false
+      state_spec: *id038
+      time_major: false
+      unroll: false
+      zero_output_for_mask: false
+    merge_mode: concat
+    return_sequences: false
+    return_state: false
+  - !!python/object:keras.src.layers.core.dense.Dense
+    _activity_regularizer: null
+    _auto_config: &id039 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        activation: relu
+        units: 64
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: 2
+      name: null
+      ndim: null
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: dense_10
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 3
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 64
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id042 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                distribution: uniform
+                mode: fan_avg
+                scale: 1.0
+                seed: null
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id041 !!python/object:keras.src.initializers.initializers.Zeros {}
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id039
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id040 !!python/name:keras.src.activations.relu ''
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    activation: *id040
+    bias_constraint: null
+    bias_initializer: *id041
+    bias_regularizer: null
+    built: false
+    kernel_constraint: null
+    kernel_initializer: *id042
+    kernel_regularizer: null
+    units: 64
+    use_bias: true
+  - !!python/object:keras.src.layers.core.dense.Dense
+    _activity_regularizer: null
+    _auto_config: &id043 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        activation: softmax
+        units: 6
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: 2
+      name: null
+      ndim: null
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: dense_11
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 3
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 6
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id045 !!python/object:keras.src.initializers.initializers.Zeros {}
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id046 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                distribution: uniform
+                mode: fan_avg
+                scale: 1.0
+                seed: null
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id043
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id044 !!python/name:keras.src.activations.softmax ''
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    activation: *id044
+    bias_constraint: null
+    bias_initializer: *id045
+    bias_regularizer: null
+    built: false
+    kernel_constraint: null
+    kernel_initializer: *id046
+    kernel_regularizer: null
+    units: 6
+    use_bias: true
+  trainable: false
+  vocab_size: 10000
+LSTM_FastText:
+  compile_params:
+    loss: categorical_crossentropy
+    metrics:
+    - accuracy
+    - *id047
+    optimizer: adam
+  embedding_dim: 100
+  max_sequence_length: 100
+  model_layers:
+  - !!python/object:keras.src.layers.core.embedding.Embedding
+    _activity_regularizer: null
+    _auto_config: &id048 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        input_dim: 10000
+        input_length: 100
+        output_dim: 100
+        trainable: false
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: false
+    _batch_input_shape: !!python/tuple
+    - null
+    - 100
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: embedding_4
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: false
+          : 4
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 100
+          : 2
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 10000
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id049 !!python/object:keras.src.initializers.initializers.RandomUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                maxval: 0.05
+                minval: -0.05
+                seed: null
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id048
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: false
+    _trainable: false
+    _trainable_weights: []
+    _updates: []
+    _use_one_hot_matmul: false
+    built: false
+    embeddings_constraint: null
+    embeddings_initializer: *id049
+    embeddings_regularizer: null
+    input_dim: 10000
+    input_length: 100
+    mask_zero: false
+    output_dim: 100
+    sparse: false
+  - !!python/object:keras.src.layers.rnn.lstm.LSTM
+    _activity_regularizer: null
+    _auto_config: &id050 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        units: 128
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      - mask
+      - training
+      - initial_state
+      _default_training_arg: null
+      _expects_mask_arg: true
+      _expects_training_arg: true
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+        - mask
+        - training
+        - initial_state
+      - null
+      - null
+      - !!python/tuple
+        - null
+        - null
+        - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _could_use_gpu_kernel: true
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec:
+    - !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: null
+      name: null
+      ndim: 3
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: lstm_2
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _num_constants: 0
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: false
+          : 7
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 2
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 0
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id050
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id056 !!python/object:keras.src.layers.rnn.lstm.LSTMCell
+                _activity_regularizer: null
+                _auto_config: &id051 !!python/object:keras.src.saving.serialization_lib.Config
+                  config:
+                    activation: tanh
+                    bias_constraint: null
+                    bias_initializer: zeros
+                    bias_regularizer: null
+                    dropout: 0.0
+                    dtype: null
+                    implementation: 2
+                    kernel_constraint: null
+                    kernel_initializer: glorot_uniform
+                    kernel_regularizer: null
+                    name: lstm_cell
+                    recurrent_activation: sigmoid
+                    recurrent_constraint: null
+                    recurrent_dropout: 0.0
+                    recurrent_initializer: orthogonal
+                    recurrent_regularizer: null
+                    trainable: true
+                    unit_forget_bias: true
+                    units: 128
+                    use_bias: true
+                _auto_get_config: true
+                _auto_track_sub_layers: true
+                _autocast: true
+                _build_input_shape: null
+                _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+                  _arg_names:
+                  - inputs
+                  - states
+                  - training
+                  _default_training_arg: null
+                  _expects_mask_arg: false
+                  _expects_training_arg: true
+                  _full_argspec: !!python/object/new:inspect.FullArgSpec
+                  - - self
+                    - inputs
+                    - states
+                    - training
+                  - null
+                  - null
+                  - !!python/tuple
+                    - null
+                  - []
+                  - null
+                  - {}
+                _callable_losses: []
+                _captured_weight_regularizer: []
+                _compute_dtype_object: *id003
+                _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+                  _compute_dtype: float32
+                  _name: float32
+                  _variable_dtype: float32
+                _dynamic: false
+                _enable_caching_device: true
+                _inbound_nodes_value: []
+                _initial_weights: null
+                _input_spec: null
+                _instrumented_keras_api: true
+                _instrumented_keras_layer_class: true
+                _instrumented_keras_model_class: false
+                _losses: []
+                _metrics: []
+                _name: lstm_cell
+                _name_scope_on_declaration: ''
+                _non_trainable_weights: []
+                _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+                  state: !!python/tuple
+                  - null
+                  - _storage:
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: true
+                      : 4
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: 2
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: 128
+                      : 2
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id053 !!python/object:keras.src.initializers.initializers.Zeros {}
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: *id051
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id055 !!python/object:keras.src.initializers.initializers.Orthogonal
+                            _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                              _built: false
+                              _rng_type: stateless
+                              _seed: null
+                            gain: 1.0
+                            seed: null
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id054 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                            _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                              _built: false
+                              _rng_type: stateless
+                              _seed: null
+                            distribution: uniform
+                            mode: fan_avg
+                            scale: 1.0
+                            seed: null
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: &id052 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+                          - - 128
+                            - 128
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: *id009
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: *id012
+                      : 1
+                      ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+                        state: !!python/tuple
+                        - null
+                        - _wrapped: 0.0
+                      : 2
+                _outbound_nodes_value: []
+                _preserve_input_structure_in_config: false
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: legacy_stateful
+                  _seed: null
+                _saved_model_arg_spec: null
+                _saved_model_inputs_spec: null
+                _self_name_based_restores: !!set {}
+                _self_saveable_object_factories: {}
+                _self_setattr_tracking: true
+                _self_tracked_trackables:
+                - *id052
+                _self_unconditional_checkpoint_dependencies:
+                - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+                  state: !!python/tuple
+                  - null
+                  - _name: state_size
+                    _ref: *id052
+                _self_unconditional_deferred_dependencies: {}
+                _self_unconditional_dependency_names:
+                  state_size: *id052
+                _self_update_uid: -1
+                _stateful: false
+                _supports_masking: false
+                _trainable: true
+                _trainable_weights: []
+                _updates: []
+                activation: *id009
+                bias_constraint: null
+                bias_initializer: *id053
+                bias_regularizer: null
+                built: false
+                dropout: 0.0
+                implementation: 2
+                kernel_constraint: null
+                kernel_initializer: *id054
+                kernel_regularizer: null
+                output_size: 128
+                recurrent_activation: *id012
+                recurrent_constraint: null
+                recurrent_dropout: 0.0
+                recurrent_initializer: *id055
+                recurrent_regularizer: null
+                state_size: *id052
+                unit_forget_bias: true
+                units: 128
+                use_bias: true
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id057 !!python/object/apply:tensorflow.python.trackable.data_structures.ListWrapper
+              - - !!python/object:keras.src.engine.input_spec.InputSpec
+                  allow_last_axis_squeeze: false
+                  axes: {}
+                  dtype: null
+                  max_ndim: null
+                  min_ndim: null
+                  name: null
+                  ndim: 2
+                  shape: !!python/tuple
+                  - null
+                  - 128
+                - !!python/object:keras.src.engine.input_spec.InputSpec
+                  allow_last_axis_squeeze: false
+                  axes: {}
+                  dtype: null
+                  max_ndim: null
+                  min_ndim: null
+                  name: null
+                  ndim: 2
+                  shape: !!python/tuple
+                  - null
+                  - 128
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _random_generator: !!python/object:keras.src.backend.RandomGenerator
+      _built: false
+      _rng_type: legacy_stateful
+      _seed: null
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_name_based_restores: !!set {}
+    _self_saveable_object_factories: {}
+    _self_setattr_tracking: true
+    _self_tracked_trackables:
+    - *id056
+    - *id057
+    _self_unconditional_checkpoint_dependencies:
+    - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+      state: !!python/tuple
+      - null
+      - _name: cell
+        _ref: *id056
+    - !!python/object/new:tensorflow.python.trackable.base.TrackableReference
+      state: !!python/tuple
+      - null
+      - _name: state_spec
+        _ref: *id057
+    _self_unconditional_deferred_dependencies: {}
+    _self_unconditional_dependency_names:
+      cell: *id056
+      state_spec: *id057
+    _self_update_uid: -1
+    _stateful: false
+    _states: null
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    built: false
+    cell: *id056
+    constants_spec: null
+    go_backwards: false
+    return_runtime: false
+    return_sequences: false
+    return_state: false
+    state_spec: *id057
+    time_major: false
+    unroll: false
+    zero_output_for_mask: false
+  - !!python/object:keras.src.layers.core.dense.Dense
+    _activity_regularizer: null
+    _auto_config: &id058 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        activation: relu
+        units: 64
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: 2
+      name: null
+      ndim: null
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: dense_8
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 3
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 64
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id058
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id059 !!python/object:keras.src.initializers.initializers.Zeros {}
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id060 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                distribution: uniform
+                mode: fan_avg
+                scale: 1.0
+                seed: null
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id040
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    activation: *id040
+    bias_constraint: null
+    bias_initializer: *id059
+    bias_regularizer: null
+    built: false
+    kernel_constraint: null
+    kernel_initializer: *id060
+    kernel_regularizer: null
+    units: 64
+    use_bias: true
+  - !!python/object:keras.src.layers.core.dense.Dense
+    _activity_regularizer: null
+    _auto_config: &id061 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        activation: softmax
+        units: 6
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: 2
+      name: null
+      ndim: null
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: dense_9
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 3
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 6
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id061
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id062 !!python/object:keras.src.initializers.initializers.Zeros {}
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id063 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                distribution: uniform
+                mode: fan_avg
+                scale: 1.0
+                seed: null
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id044
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    activation: *id044
+    bias_constraint: null
+    bias_initializer: *id062
+    bias_regularizer: null
+    built: false
+    kernel_constraint: null
+    kernel_initializer: *id063
+    kernel_regularizer: null
+    units: 6
+    use_bias: true
+  trainable: false
+  vocab_size: 10000
+Simple_Word2Vec:
+  compile_params:
+    loss: categorical_crossentropy
+    metrics:
+    - accuracy
+    - *id047
+    optimizer: adam
+  embedding_dim: 100
+  model_layers:
+  - !!python/object:keras.src.layers.core.embedding.Embedding
+    _activity_regularizer: null
+    _auto_config: &id064 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        input_dim: 10000
+        output_dim: 100
+        trainable: false
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: false
+    _batch_input_shape: !!python/tuple
+    - null
+    - null
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: embedding_3
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: false
+          : 4
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 100
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id064
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 10000
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id065 !!python/object:keras.src.initializers.initializers.RandomUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                maxval: 0.05
+                minval: -0.05
+                seed: null
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: false
+    _trainable: false
+    _trainable_weights: []
+    _updates: []
+    _use_one_hot_matmul: false
+    built: false
+    embeddings_constraint: null
+    embeddings_initializer: *id065
+    embeddings_regularizer: null
+    input_dim: 10000
+    input_length: null
+    mask_zero: false
+    output_dim: 100
+    sparse: false
+  - !!python/object:keras.src.layers.reshaping.flatten.Flatten
+    _activity_regularizer: null
+    _auto_config: &id066 !!python/object:keras.src.saving.serialization_lib.Config
+      config: {}
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _channels_first: false
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: 1
+      name: null
+      ndim: null
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: flatten_1
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: false
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: channels_last
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id066
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: false
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    built: false
+    data_format: channels_last
+  - !!python/object:keras.src.layers.core.dense.Dense
+    _activity_regularizer: null
+    _auto_config: &id067 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        activation: relu
+        units: 128
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: 2
+      name: null
+      ndim: null
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: dense_6
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 3
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 128
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id068 !!python/object:keras.src.initializers.initializers.Zeros {}
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id067
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id069 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                distribution: uniform
+                mode: fan_avg
+                scale: 1.0
+                seed: null
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id040
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    activation: *id040
+    bias_constraint: null
+    bias_initializer: *id068
+    bias_regularizer: null
+    built: false
+    kernel_constraint: null
+    kernel_initializer: *id069
+    kernel_regularizer: null
+    units: 128
+    use_bias: true
+  - !!python/object:keras.src.layers.core.dense.Dense
+    _activity_regularizer: null
+    _auto_config: &id070 !!python/object:keras.src.saving.serialization_lib.Config
+      config:
+        activation: softmax
+        units: 6
+    _auto_get_config: true
+    _auto_track_sub_layers: true
+    _autocast: true
+    _build_input_shape: null
+    _call_spec: !!python/object:keras.src.utils.layer_utils.CallFunctionSpec
+      _arg_names:
+      - inputs
+      _default_training_arg: null
+      _expects_mask_arg: false
+      _expects_training_arg: false
+      _full_argspec: !!python/object/new:inspect.FullArgSpec
+      - - self
+        - inputs
+      - null
+      - null
+      - null
+      - []
+      - null
+      - {}
+    _callable_losses: []
+    _captured_weight_regularizer: []
+    _compute_dtype_object: *id003
+    _dtype_policy: !!python/object:keras.src.mixed_precision.policy.Policy
+      _compute_dtype: float32
+      _name: float32
+      _variable_dtype: float32
+    _dynamic: false
+    _inbound_nodes_value: []
+    _initial_weights: null
+    _input_spec: !!python/object:keras.src.engine.input_spec.InputSpec
+      allow_last_axis_squeeze: false
+      axes: {}
+      dtype: null
+      max_ndim: null
+      min_ndim: 2
+      name: null
+      ndim: null
+      shape: null
+    _instrumented_keras_api: true
+    _instrumented_keras_layer_class: true
+    _instrumented_keras_model_class: false
+    _losses: []
+    _metrics: []
+    _name: dense_7
+    _name_scope_on_declaration: ''
+    _non_trainable_weights: []
+    _obj_reference_counts_dict: !!python/object/new:keras.src.utils.object_identity.ObjectIdentityDictionary
+      state: !!python/tuple
+      - null
+      - _storage:
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: true
+          : 3
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: 6
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id072 !!python/object:keras.src.initializers.initializers.GlorotUniform
+                _random_generator: !!python/object:keras.src.backend.RandomGenerator
+                  _built: false
+                  _rng_type: stateless
+                  _seed: null
+                distribution: uniform
+                mode: fan_avg
+                scale: 1.0
+                seed: null
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id070
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: &id071 !!python/object:keras.src.initializers.initializers.Zeros {}
+          : 1
+          ? !!python/object/new:keras.src.utils.object_identity._ObjectIdentityWrapper
+            state: !!python/tuple
+            - null
+            - _wrapped: *id044
+          : 1
+    _outbound_nodes_value: []
+    _preserve_input_structure_in_config: false
+    _saved_model_arg_spec: null
+    _saved_model_inputs_spec: null
+    _self_setattr_tracking: true
+    _self_tracked_trackables: []
+    _stateful: false
+    _supports_masking: true
+    _trainable: true
+    _trainable_weights: []
+    _updates: []
+    activation: *id044
+    bias_constraint: null
+    bias_initializer: *id071
+    bias_regularizer: null
+    built: false
+    kernel_constraint: null
+    kernel_initializer: *id072
+    kernel_regularizer: null
+    units: 6
+    use_bias: true
+  trainable: false
+  vocab_size: 10000
+Transformer_BERT:
+  compile_params:
+    loss: categorical_crossentropy
+    metrics:
+    - accuracy
+    - *id047
+    optimizer: adam
+  model: !!python/object/apply:keras.src.saving.pickle_utils.deserialize_model_from_bytecode
+  -
