@@ -1,4 +1,3 @@
 # models trained with BERT and RoBERTa are too large to be pushed to GitHub
 *.bin
 *.pth
-*.txt
