@@ -19,8 +19,8 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[license-shield]: https://img.shields.io/github/license/your-username/your-repo.svg?style=for-the-badge
-[license-url]: https://github.com/your-username/your-repo/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/hiyorimona/Emotion-Classification.svg?style=for-the-badge
+[license-url]: [https://github.com/your-username/your-repo/blob/master/LICENSE.txt](https://github.com/hiyorimona/Emotion-Classification/blob/main/LICENSE.txt)
 
 
 
@@ -44,10 +44,10 @@ Hello this was one my uni group projects from 2nd year of my studies
 
 
 ## Installation
+To clone this repository, use the following command:
 
-Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+      git clone https://github.com/hiyorimona/Emotion-Classification.git
    ```
 
 
