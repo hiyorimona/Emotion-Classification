@@ -47,7 +47,7 @@ Hello this was one my uni group projects from 2nd year of my studies
 To clone this repository, use the following command:
 
    ```sh
-      git clone https://github.com/hiyorimona/Emotion-Classification.git
+   git clone https://github.com/hiyorimona/Emotion-Classification.git
    ```
 
 
