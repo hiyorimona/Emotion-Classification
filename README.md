@@ -19,12 +19,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[license-shield]: https://img.shields.io/github/license/hiyorimona/Emotion-Classification.svg?style=for-the-badge
-[license-url]: [https://github.com/your-username/your-repo/blob/master/LICENSE.txt](https://github.com/hiyorimona/Emotion-Classification/blob/main/LICENSE.txt)
 
 
 
-[![MIT License][license-shield]][license-url]
 
 
 
