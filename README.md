@@ -49,15 +49,6 @@ To clone this repository, use the following command:
 
 
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
@@ -65,6 +56,3 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Python-url]: https://www.python.org/
 [Jupyter-shield]: https://img.shields.io/badge/Jupyter-F37626.svg?style=for-the-badge&logo=Jupyter&logoColor=white
 [Jupyter-url]: https://jupyter.org/
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-
