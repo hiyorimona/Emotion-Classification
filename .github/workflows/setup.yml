@@ -58,7 +58,6 @@ jobs:
           poetry install --no-interaction --no-root
           poetry install --no-interaction
 
-
   Build-and-Publish:
     runs-on: ubuntu-latest
     environment: Production
@@ -81,20 +80,4 @@ jobs:
           IMAGE_ID_GHCR=$(echo $IMAGE_ID_GHCR | tr '[A-Z]' '[a-z]')
 
           IMAGE_ID_DOCKERHUB=${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME
-          IMAGE_ID_DOCKERHUB=$(echo $IMAGE_ID_DOCKERHUB | tr '[A-Z]' '[a-z]')
-
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-          [ "$VERSION" == "main" ] && VERSION=latest
-
-          echo "IMAGE_ID_GHCR=$IMAGE_ID_GHCR" >> $GITHUB_ENV
-          echo "IMAGE_ID_DOCKERHUB=$IMAGE_ID_DOCKERHUB" >> $GITHUB_ENV
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-
-      - name: Tag-and-push
-        run: |
-          docker tag $IMAGE_NAME $IMAGE_ID_GHCR:$VERSION
-          docker push $IMAGE_ID_GHCR:$VERSION
-          
-          docker tag $IMAGE_NAME $IMAGE_ID_DOCKERHUB:$VERSION
-          docker push $IMAGE_ID_DOCKERHUB:$VERSION
+          IMAGE_ID_DOCKERHUB=$(echo $IMAGE_ID_DOCKERHUB | tr '[A-Z]' '[a-z
