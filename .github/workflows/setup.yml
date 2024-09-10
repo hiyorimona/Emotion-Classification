@@ -71,8 +71,8 @@ jobs:
 
       - name: Prepare image tags
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+          docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
           
           IMAGE_ID_GHCR=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
           IMAGE_ID_GHCR=$(echo $IMAGE_ID_GHCR | tr '[A-Z]' '[a-z]')
